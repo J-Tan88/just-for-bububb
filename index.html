@@ -1,27 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset='UTF-8'/>
-  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
-  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-  <title>Pesan HTML buat Kamu Nih! <3</title>
+  <meta charset="UTF-8"/>
+  <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+
+  <title>Pesan HTML buat Kamu Nih! &lt;3</title>
   <meta name="description" content="Buka bentar yaa.. HTML feeldream.id">
   <meta name="keywords" content="HTML, Bucin, Feeldream">
   <meta name="author" content="Feeldream">
 
-  <!-- Fonts & SweetAlert -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
-  <!-- CSS External -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://htmlku.com/night/play/style.css">
 
   <style>
-    /* Efek bintang berkedip */
+    /* BINTANG BERKEDIP */
     .bintang {
       position: fixed;
       width: 4px;
@@ -39,7 +39,7 @@
       50% { opacity: 1; transform: scale(1.5); }
     }
 
-    /* Emoji malam jatuh */
+    /* EMOJI MALAM MELAYANG */
     .floaty {
       position: fixed;
       font-size: 18px;
@@ -56,9 +56,10 @@
       100% { transform: translateY(0); opacity: 0.8; }
     }
 
-    /* Perbesar gambar StellaLou */
+    /* GAMBAR STELLALOU */
     #suratin img {
       width: 200px;
+      max-width: 80vw;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -66,16 +67,16 @@
       position: relative;
     }
 
-    /* Bungkus gambar dan teks klik */
     .bungkusSuratin {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 20px;
       cursor: pointer;
+      text-align: center;
     }
 
-    /* Kotak klik gambar */
+    /* TOMBOL KLIK GAMBAR */
     #ket {
       display: inline-block;
       margin-top: 12px;
@@ -89,7 +90,7 @@
       font-family: 'Work Sans', sans-serif;
       text-align: center;
       backdrop-filter: blur(5px);
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
       animation: pulse 2s infinite;
     }
 
@@ -98,110 +99,335 @@
       50% { transform: scale(1.05); opacity: 0.9; }
     }
 
-    /* Credit Text */
-#credit {
-  margin-top: 40px; /* sebelumnya 24px */
-  font-size: 20px;
-  font-family: 'Dancing Script', cursive;
-  color: white;
-  text-align: center;
-  opacity: 0.85;
-  animation: creditFloat 3s ease-in-out infinite; /* animasi gerak */
-}
+    /* CREDIT J.TAN */
+    #credit {
+      margin-top: 20px;
+      font-size: 20px;
+      font-family: 'Dancing Script', cursive;
+      color: white;
+      text-align: center;
+      opacity: 0.85;
+      animation: creditFloat 3s ease-in-out infinite;
+    }
 
-@keyframes creditFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); } /* gerakan turun-naik */
-}
+    @keyframes creditFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
 
+    /* SWEETALERT */
+    .swal2-popup {
+      width: min(360px, 90vw) !important;
+      box-sizing: border-box !important;
+      padding: 20px 18px !important;
+      border-radius: 20px !important;
+    }
+
+    .swal2-title {
+      font-family: 'Work Sans', sans-serif !important;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
+      font-weight: 400 !important;
+      text-align: center !important;
+      white-space: pre-line !important;
+      overflow-wrap: anywhere;
+      padding: 0 !important;
+    }
+
+    .swal2-image {
+      max-width: 125px !important;
+      max-height: 125px !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      margin: 0 auto 12px !important;
+    }
+
+    .swal2-html-container {
+      font-family: 'Work Sans', sans-serif !important;
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+      margin: 8px auto 0 !important;
+      padding: 0 !important;
+      overflow-wrap: anywhere;
+    }
+
+    .pesan-text {
+      width: 100%;
+      max-width: 290px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    .pesan-text b { font-weight: 700; }
+    .pesan-text p { margin: 8px 0; }
+
+    /* TULISAN UTAMA */
+    #kalimat,
+    #kalimat2,
+    #kalimatbawah,
+    #kalimatbawah2,
+    #kalimatbawah3 {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center !important;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    #kalimat {
+      font-size: 18px !important;
+      line-height: 1.5 !important;
+      margin: 0 0 12px !important;
+    }
+
+    #kalimat2 {
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+      margin: 0 0 14px !important;
+    }
+
+    #kalimatbawah {
+      font-size: 17px !important;
+      line-height: 1.5 !important;
+      margin: 12px 0 !important;
+    }
+
+    #kalimatbawah2,
+    #kalimatbawah3 {
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+      margin: 10px 0 !important;
+    }
+
+    #tmbl {
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+    }
+
+    /* SEMBUNYIKAN GOOD NIGHT DI ATAS KOTAK */
+    #halo {
+      display: none !important;
+    }
+
+    /* TOMBOL KIRIM: ANIMASI HANYA PADA KOTAK TOMBOL */
+    #Tombol.tombol-cepat {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+
+      /* Matikan animasi pada wadah supaya layar tidak ikut bergerak */
+      animation: none !important;
+      transform: none !important;
+      filter: none !important;
+    }
+
+    #Tombol.tombol-cepat > a {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform-origin: center center;
+      will-change: transform;
+
+      /* Masuk lembut, lalu detak hanya pada tombol */
+      animation:
+        tombolMasuk 1.3s cubic-bezier(0.22, 1, 0.36, 1) both,
+        tombolDetak 2.8s ease-in-out 1.3s infinite;
+    }
+
+    #Tombol.tombol-cepat > a:active {
+      animation-play-state: paused;
+      transform: scale(0.98);
+    }
+
+    /* Muncul perlahan tanpa membuat layar berkedip */
+    @keyframes tombolMasuk {
+      0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.96);
+      }
+      70% {
+        opacity: 1;
+        transform: translateY(0) scale(1.015);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Detak lembut seperti jantung */
+    @keyframes tombolDetak {
+      0%, 100% {
+        transform: scale(1);
+      }
+      8% {
+        transform: scale(1.035);
+      }
+      16% {
+        transform: scale(1);
+      }
+      24% {
+        transform: scale(1.025);
+      }
+      32%, 90% {
+        transform: scale(1);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .swal2-popup {
+        width: 90vw !important;
+        padding: 18px 15px !important;
+      }
+
+      .swal2-image {
+        max-width: 115px !important;
+        max-height: 115px !important;
+      }
+
+      .swal2-title { font-size: 15px !important; }
+
+      .pesan-text {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      #kalimat { font-size: 17px !important; }
+
+      #kalimat2 {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+      }
+
+      #kalimatbawah { font-size: 16px !important; }
+
+      #kalimatbawah2,
+      #kalimatbawah3,
+      #tmbl {
+        font-size: 14px !important;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Audio -->
+  <!-- AUDIO -->
   <audio id="linkmp3" loop hidden preload="auto">
-    <source src="https://www.dropbox.com/scl/fi/egve59x47qk24icpwsp0u/Cry-On-My-Shoulder-Westlife-Toni-Braxton.mp3?rlkey=459m6kcwv6da2zuhpalmm50ad&st=eritjxtm&raw=1" type="audio/mpeg">
+    <source src="https://www.dropbox.com/scl/fi/te3oqvdjt050x329b4eqq/Since-I-Found-You-Lyrics-Christian-Bautista-06ekj79wrlM.mp3?rlkey=1sqkhzv364huq7ok5zt7ucnuy&st=xqmi05dy&raw=1" type="audio/mpeg">
   </audio>
 
-  <!-- Background & Blur -->
+  <!-- BACKGROUND -->
   <div id="bodyblur">
-    <img src="https://s14.gifyu.com/images/bKz4q.jpg" id="wallpaper"/>
+    <img src="https://s14.gifyu.com/images/bKz4q.jpg" id="wallpaper" alt="Background"/>
     <div id="beneranblur"></div>
   </div>
 
-  <!-- Konten Utama -->
-  <div id='Content'>
-    <div class="bungkusSuratin" onClick="memulai();">
+  <!-- KONTEN UTAMA -->
+  <div id="Content">
+
+    <!-- HALAMAN DEPAN -->
+    <div class="bungkusSuratin" onclick="memulai();">
       <div id="suratin">
-        <img src="https://s14.gifyu.com/images/bKSEV.gif"/>
+        <img src="https://s15.gifyu.com/images/bQBQr.jpg" alt="StellaLou"/>
       </div>
+
       <p id="ket">Klik Gambar</p>
       <p id="credit">J.Tan</p>
     </div>
 
+    <!-- KUMPULAN STIKER -->
     <div class="kumpulanstiker">
-      <img src="https://feeldreams.github.io/pusn.gif" id="stiker1"/>
-      <img src="https://feeldreams.github.io/bunga.gif" id="stiker2"/>
-      <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3"/>
-      <img src="https://feeldreams.github.io/smprt.gif" id="stiker4"/>
-      <img src="https://feeldreams.github.io/ngumpet.gif" id="stiker5"/>
-      <img src="https://feeldreams.github.io/bunga.gif" id="stiker" onClick="ftaksi();"/>
-      <img src="https://feeldreams.github.io/bunga.gif" id="stikerAkhir"/>
+      <img src="https://feeldreams.github.io/pusn.gif" id="stiker1" alt=""/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stiker2" alt=""/>
+      <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3" alt=""/>
+      <img src="https://feeldreams.github.io/smprt.gif" id="stiker4" alt=""/>
+      <img src="https://feeldreams.github.io/ngumpet.gif" id="stiker5" alt=""/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stiker" onclick="ftaksi();" alt=""/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stikerAkhir" alt=""/>
     </div>
 
-    <p id="halo">Good Night!</p>
+    <p id="halo" style="display:none;">Good Night!</p>
 
-    <div><blockquote id='bq'>
-      <p id="kalimat">Dah Segitu Aja ya.. 🤭</p>
-      <p id="kalimat2">Selamat melepas lelah, Bobo yang cantik dan pules ya.. Semoga besok jalani harinya lebih baik 🙌✨</p>
-      <p id="kalimatbawah">I Miss You</p>
-      <p id="kalimatbawah2" class="sembunyi">Good Night 💤</p>
-      <p id="kalimatbawah3" class="sembunyi">Mimpi Indah ya 🌙💭</p>
-    </blockquote></div>
+    <!-- TEKS UTAMA -->
+    <div>
+      <blockquote id="bq">
+        <p id="kalimat">Dah Segitu Aja ya.. 🤭</p>
 
+        <p id="kalimat2">
+          Selamat melepas lelah, Bobok yang cantik dan pules ya..
+          Semoga besok jalani harinya lebih baik 🙌✨
+        </p>
+
+        <p id="kalimatbawah">I Love You More Bububb 💗</p>
+        <p id="kalimatbawah2" class="sembunyi">Good Night 💤</p>
+        <p id="kalimatbawah3" class="sembunyi">Mimpi Indah ya 🌙💭</p>
+      </blockquote>
+    </div>
+
+    <!-- TOMBOL WHATSAPP -->
     <div id="Tombol">
-      <a href="https://wa.me/6281994587775?text=Awww%20Good%20Night%20too%20%F0%9F%8C%A9%F0%9F%A4%97%F0%9F%A4%A5" target="_blank">
+      <a href="https://wa.me/6281994587775?text=Awww%20Good%20Night%20too%20%F0%9F%8C%A9%F0%9F%A4%97%F0%9F%A4%A5" target="_blank" rel="noopener">
         <b id="tmbl">💌 Kirim</b>
       </a>
     </div>
 
-    <span id="pesanWA" class="sembunyi">Awww Good Night too ❤️❤️❤️</span>
+    <span id="pesanWA" class="sembunyi">AWWW... Good night too Bububbb, sini peluk duluuu. Makasih udah bikin aku senyum malam ini. Love you moreee, si bawel kesayangankuuu 😚💋❤️</span>
+
   </div>
 
-  <!-- Bintang Berkedip -->
+  <!-- BINTANG BERKEDIP -->
   <script>
     function createTwinklingStars() {
       const jumlahBintang = 5;
+
       for (let i = 0; i < jumlahBintang; i++) {
         const star = document.createElement('div');
         star.classList.add('bintang');
+
         const ukuran = Math.random() * 3 + 2;
+
         star.style.width = ukuran + 'px';
         star.style.height = ukuran + 'px';
         star.style.top = Math.random() * window.innerHeight + 'px';
         star.style.left = Math.random() * window.innerWidth + 'px';
         star.style.opacity = Math.random() * 0.5 + 0.5;
+
         document.body.appendChild(star);
         setTimeout(() => star.remove(), 8000);
       }
     }
+
     setInterval(createTwinklingStars, 150);
   </script>
 
-  <!-- Emoji Jatuhan -->
+  <!-- EMOJI MALAM MELAYANG -->
   <script>
     function createFloatingNightIcons() {
       const jumlah = 25;
-      const ikon = ['🌙','✨','💫','🌌','💤'];
+      const ikon = ['🌙', '✨', '💫', '🌌', '💤'];
 
       for (let i = 0; i < jumlah; i++) {
         const floaty = document.createElement('div');
+
         floaty.className = 'floaty';
         floaty.innerText = ikon[Math.floor(Math.random() * ikon.length)];
         floaty.style.left = Math.random() * 100 + '%';
         floaty.style.top = Math.random() * 100 + '%';
         floaty.style.fontSize = `${Math.random() * 10 + 14}px`;
         floaty.style.animationDuration = `${Math.random() * 4 + 3}s`;
+
         document.body.appendChild(floaty);
       }
     }
@@ -209,62 +435,150 @@
     window.addEventListener('DOMContentLoaded', createFloatingNightIcons);
   </script>
 
-  <!-- SweetAlert + Audio Trigger -->
+  <!-- SWEETALERT + AUDIO -->
   <script>
-    const audio = document.getElementById('linkmp3');
+    const audioEl = document.getElementById('linkmp3');
 
     async function pesanAwal() {
-      suratin.style.display = "none";
-      ket.style.display = "none";
+      document.getElementById('suratin').style.display = 'none';
+      document.getElementById('ket').style.display = 'none';
+      document.getElementById('credit').style.display = 'none';
 
       const delay = 12000;
 
       await swalst.fire({
-        title: 'Hai, Uci 😎',
-        imageUrl: stiker1.src,
-        showConfirmButton: false,
-        timer: delay,
-        allowOutsideClick: false
-      });
-      await swalst.fire({
-        title: 'Koko Cuma Mau Bilang 😚💬 ',
-        imageUrl: stiker2.src,
-        showConfirmButton: false,
-        timer: delay,
-        allowOutsideClick: false
-      });
-      await swalst.fire({
-        title: 'Koko Masih Ada Yaa! 🤭',
-        imageUrl: stiker3.src,
-        showConfirmButton: false,
-        timer: delay,
-        allowOutsideClick: false
-      });
-      await swalst.fire({
-        title: 'Gabole bobo malem², nanti kantong matanya makin keliatan, istirahat yang cukup biar tetap sehat dan ceria besok ☀️💪🔥 ',
-        imageUrl: stiker4.src,
-        showConfirmButton: false,
-        timer: delay,
-        allowOutsideClick: false
-      });
-      await swalst.fire({
-        title: 'Hari ini uci udah hebat banget. udah berusaha semampunya, maybe gak semua hal berjalan sesuai harapan. Tapi koko tahu, uci udah ngelakuin yg terbaik. Sekarang waktunya istirahat ya.. biar hati uci tenang, pikiran uci rileks, dan tubuh uci bisa pulih 🌙💤 ',
-        imageUrl: stiker5.src,
+        title: 'Hai, Bubub 😎',
+        imageUrl: document.getElementById('stiker1').src,
         showConfirmButton: false,
         timer: delay,
         allowOutsideClick: false
       });
 
-      mulaikonten();
-    }
+      await swalst.fire({
+        title: 'Si bawel cuma mau bilang 😚💬',
+        imageUrl: document.getElementById('stiker2').src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
 
-    function memulai() {
-      audio.play();
-      pesanAwal();
+      await swalst.fire({
+        title: 'Aku masih ada yaa! 🤭',
+        imageUrl: document.getElementById('stiker3').src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+
+      await swalst.fire({
+        title: '',
+        html: `
+          <div class="pesan-text">
+            <b style="font-size:16px;">
+              Bubuuub, waktunya bobokkk 🐣💗
+            </b>
+            <p>
+              Jangan tidur kemaleman yaa, nanti kalau kamu sakit aku khawatir 🥺
+            </p>
+            <p>
+              Kalau aku khawatir aku kangen, kalau aku kangen aku pengen ketemu, kalau pengen ketemu aku harus nabung buat ongkos 😭😭 WKWKWK.
+            </p>
+            <p>
+              Jadi tolong jaga kesehatan yaa, tidur yang nyenyak, jangan lupa selimutan, peluk gulingnya sambil bayangin aku ☝🏻💗
+            </p>
+          </div>
+        `,
+        imageUrl: document.getElementById('stiker4').src,
+        showConfirmButton: false,
+        timer: 15000,
+        allowOutsideClick: false
+      });
+
+      await swalst.fire({
+        title: '',
+        html: `
+          <div class="pesan-text">
+            <b style="font-size:16px;">
+              Hari ini kamu udah hebat banget 💗
+            </b>
+            <p>
+              Udah berusaha semampunya. Maybe ga semua hal berjalan sesuai harapan, tapi aku tahu kamu udah ngelakuin yang terbaik.
+            </p>
+            <p>
+              Sekarang waktunya istirahat ya.. biar hati tenang, pikiran rileks, dan tubuh kamu bisa pulih 🌙💤
+            </p>
+          </div>
+        `,
+        imageUrl: document.getElementById('stiker5').src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+
+      if (typeof mulaikonten === 'function') {
+        mulaikonten();
+      }
+
+      document.getElementById('halo').style.display = 'none';
+      document.getElementById('credit').style.display = 'none';
     }
   </script>
 
+  <!-- SCRIPT.JS EKSTERNAL ASLI: TETAP DIPAKAI -->
   <script src="https://htmlku.com/night/play/script.js"></script>
-  
+
+  <!-- PERBAIKAN MEMULAI DAN TEKS TERAKHIR -->
+  <script>
+    (function () {
+      let sudahMulai = false;
+
+      window.memulai = function () {
+        if (sudahMulai) return;
+        sudahMulai = true;
+
+        audioEl.play().catch(function () {});
+
+        const surat = document.getElementById('suratin');
+        const wallpaper = document.getElementById('wallpaper');
+        const ket = document.getElementById('ket');
+        const credit = document.getElementById('credit');
+credit.style.display = 'none';
+
+        surat.style.transition = 'all .8s ease';
+        surat.style.transform = 'scale(10)';
+        surat.style.opacity = '0';
+
+        wallpaper.style.transform = 'scale(1.5)';
+        ket.style.display = 'none';
+
+        setTimeout(function () {
+          pesanAwal();
+        }, 850);
+      };
+
+      // Teks terakhir menjadi penutup.
+      window.munculbwh3 = function () {
+        const teksBawah = document.getElementById('kalimatbawah');
+        const teksTerakhir = document.getElementById('kalimatbawah3');
+        const tombol = document.getElementById('Tombol');
+
+        teksBawah.innerHTML = teksTerakhir.innerHTML;
+
+        if (typeof otomatis === 'function') {
+          otomatis();
+        }
+
+        // Hanya memberi class pada tombol Kirim.
+        setTimeout(function () {
+          tombol.classList.add('tombol-cepat');
+
+          if (typeof window.tombol === 'function') {
+            window.tombol();
+          }
+        }, 500);
+      };
+    })();
+  </script>
+
 </body>
 </html>
