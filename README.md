@@ -1,2 +1,2 @@
-# goodnight-for-you-dari-koko
+# goodnight-for-you
 ucapan good night
