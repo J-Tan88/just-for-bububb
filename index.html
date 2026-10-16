@@ -217,14 +217,12 @@
       display: none !important;
     }
 
-    /* TOMBOL KIRIM: ANIMASI HANYA PADA KOTAK TOMBOL */
+    /* TOMBOL KIRIM */
     #Tombol.tombol-cepat {
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
       pointer-events: auto !important;
-
-      /* Matikan animasi pada wadah supaya layar tidak ikut bergerak */
       animation: none !important;
       transform: none !important;
       filter: none !important;
@@ -237,8 +235,6 @@
       pointer-events: auto !important;
       transform-origin: center center;
       will-change: transform;
-
-      /* Masuk lembut, lalu detak hanya pada tombol */
       animation:
         tombolMasuk 1.3s cubic-bezier(0.22, 1, 0.36, 1) both,
         tombolDetak 2.8s ease-in-out 1.3s infinite;
@@ -249,7 +245,6 @@
       transform: scale(0.98);
     }
 
-    /* Muncul perlahan tanpa membuat layar berkedip */
     @keyframes tombolMasuk {
       0% {
         opacity: 0;
@@ -265,23 +260,12 @@
       }
     }
 
-    /* Detak lembut seperti jantung */
     @keyframes tombolDetak {
-      0%, 100% {
-        transform: scale(1);
-      }
-      8% {
-        transform: scale(1.035);
-      }
-      16% {
-        transform: scale(1);
-      }
-      24% {
-        transform: scale(1.025);
-      }
-      32%, 90% {
-        transform: scale(1);
-      }
+      0%, 100% { transform: scale(1); }
+      8% { transform: scale(1.035); }
+      16% { transform: scale(1); }
+      24% { transform: scale(1.025); }
+      32%, 90% { transform: scale(1); }
     }
 
     @media screen and (max-width: 480px) {
@@ -378,11 +362,12 @@
 
     <!-- TOMBOL WHATSAPP -->
     <div id="Tombol">
-      <a href="https://wa.me/6281994587775?text=Awww%20Good%20Night%20too%20%F0%9F%8C%A9%F0%9F%A4%97%F0%9F%A4%A5" target="_blank" rel="noopener">
+      <a id="tombolWA" href="#" target="_blank" rel="noopener">
         <b id="tmbl">💌 Kirim</b>
       </a>
     </div>
 
+    <!-- PESAN BALASAN WHATSAPP -->
     <span id="pesanWA" class="sembunyi">AWWW... Good night too Bububbb, sini peluk duluuu. Makasih udah bikin aku senyum malam ini. Love you moreee, si bawel kesayangankuuu 😚💋❤️</span>
 
   </div>
@@ -542,7 +527,8 @@
         const wallpaper = document.getElementById('wallpaper');
         const ket = document.getElementById('ket');
         const credit = document.getElementById('credit');
-credit.style.display = 'none';
+
+        credit.style.display = 'none';
 
         surat.style.transition = 'all .8s ease';
         surat.style.transform = 'scale(10)';
@@ -577,6 +563,23 @@ credit.style.display = 'none';
           }
         }, 500);
       };
+    })();
+  </script>
+
+  <!-- PERBAIKAN PESAN WHATSAPP -->
+  <script>
+    (function () {
+      const nomorWA = '6281994587775';
+      const tombolWA = document.getElementById('tombolWA');
+      const pesanWA = document.getElementById('pesanWA');
+
+      if (tombolWA && pesanWA) {
+        const pesan = pesanWA.textContent.trim();
+
+        tombolWA.href =
+          'https://wa.me/' + nomorWA + '?text=' +
+          encodeURIComponent(pesan);
+      }
     })();
   </script>
 
